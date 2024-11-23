@@ -3,28 +3,20 @@
 
 ## Project Description
 
-This is a Spring Boot-based e-commerce application designed to manage products and a shopping cart. It supports basic CRUD operations for products, adding/removing products from the cart, and performing a checkout. The app uses PostgreSQL as the database, Spring Data JPA for persistence, and includes basic tax calculations based on product price.
+This is a Spring Boot-based e-commerce application that allows managing products and a shopping cart. It supports basic operations like adding, viewing, and removing products from the cart, along with calculating total prices and taxes during checkout.
+
 
 ### Key Features:
-- **Add/Edit/View Products**: Supports managing products with details like name, description, price, and tax rate.
-- **Shopping Cart**: Allows users to add, remove, and view products in the cart.
-- **Checkout**: Calculates the total price, tax, and grand total during checkout, then clears the cart.
-- **Product Search**: Search products based on a keyword.
-- **API Documentation**: All functionality is exposed through REST APIs.
-
-## Assumptions Made
-
-1. **Tax Calculation**: Products priced above **1000** are taxed at **15%**, and those below **1000** are taxed at **10%**.
-2. **Database**: PostgreSQL is used as the database. The `product` table is set with an auto-incrementing `id`.
-3. **API Access**: This application is intended for a server-side environment with exposed REST APIs.
-4. **Testing**: Basic testing support is included via the `spring-boot-starter-test` dependency for unit and integration tests.
+- **Manage Products**: Add, view, and search for products.
+- **Shopping Cart**: Add and remove products from the cart.
+- **Checkout**: Calculate total price, tax, and grand total during checkout.
 
 ## How to Run the Application
 
-### Prerequisites
+### Prerequisites:
 - **Java 21** or higher
 - **PostgreSQL** installed and running
-- **Maven** (for managing dependencies and building the project)
+- **Maven** (for building the project)
 
 ### Steps to Run the Application:
 
@@ -34,11 +26,11 @@ This is a Spring Boot-based e-commerce application designed to manage products a
    cd yourrepository
    ```
 
-2. **Set up the Database**:
+2. **Configure Database**:
    - Create a database in PostgreSQL:
-     ```sql
-     CREATE DATABASE your_database_name;
-     ```
+   The database will be automatically created and initialized by the application.
+   Ensure PostgreSQL is running on `localhost:5432`
+
    - Make sure the `product` table is set with an `auto-increment` `id` and the `tax_rate` field.
    
 3. **Update application properties**:
@@ -48,8 +40,10 @@ This is a Spring Boot-based e-commerce application designed to manage products a
    spring.datasource.url=jdbc:postgresql://localhost:5432/your_database_name
    spring.datasource.username=your_username
    spring.datasource.password=your_password
-   spring.jpa.hibernate.ddl-auto=update  # This will automatically create/modify database schema
-   spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
+   spring.jpa.hibernate.ddl-auto=update
+   spring.sql.init.mode=always
+   spring.jpa.show-sql=true
+   spring.jackson.serialization.indent-output=true
    ```
 
 4. **Build the project**:

@@ -5,6 +5,7 @@ import com.example.demo.domain.CartItem;
 import com.example.demo.domain.Product;
 import com.example.demo.infrastructure.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -67,7 +68,17 @@ public class ShopController {
     // View all items in the cart
     @GetMapping("/view_cart")
     public ResponseEntity<?> viewCart() {
-        return ResponseEntity.ok(cartService.viewCart()); // Use CartService to view the cart
+        // Check if the cart is empty using CartService
+        if (cartService.viewCart().isEmpty()) {
+            // Return a custom message if the cart is empty
+            Map<String, String> response = new HashMap<>();
+            response.put("message", "The cart is empty");
+            return ResponseEntity.status(HttpStatus.OK).body(response);
+        }
+
+        // Return the list of items in the cart if it's not empty
+        List<CartItem> cartItems = new ArrayList<>(cartService.viewCart().values());
+        return ResponseEntity.ok(cartItems);
     }
 
     // Remove product from the cart

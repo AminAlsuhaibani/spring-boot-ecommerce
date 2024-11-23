@@ -5,16 +5,23 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Column;
+import jakarta.persistence.Table;
+
 
 @Entity
+@Table(name = "Amin_Alsuhaibani_product")
 public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    
+
+    @Column(nullable = false)
     private String name;
+
+    @Column(nullable = false)
     private double price;
+
     private String description;
 
     @Column(name = "tax_rate")
@@ -26,7 +33,11 @@ public class Product {
         this.name = name;
         this.price = price;
         this.description = description;
-        this.taxRate = (price > 1000) ? 0.15 : 0.10;
+        this.taxRate = calculateTaxRate(price);
+    }
+
+    private double calculateTaxRate(double price) {
+        return (price > 1000) ? 0.15 : 0.10;
     }
 
     // Getters and Setters
@@ -52,7 +63,7 @@ public class Product {
 
     public void setPrice(double price) {
         this.price = price;
-        this.taxRate = (price > 1000) ? 0.15 : 0.10;
+        this.taxRate = calculateTaxRate(price);
     }
 
     public String getDescription() {

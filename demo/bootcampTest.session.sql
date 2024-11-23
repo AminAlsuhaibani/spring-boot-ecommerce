@@ -71,3 +71,10 @@ UPDATE product
 SET id = updated.new_id
 FROM updated
 WHERE product.id = updated.id;
+CREATE TABLE amin_alsuhaibani_product (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    price DOUBLE PRECISION NOT NULL,
+    description TEXT,
+    tax_rate DOUBLE PRECISION NOT NULL
+);

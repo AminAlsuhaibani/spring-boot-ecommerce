@@ -1,0 +1,147 @@
+{
+	"info": {
+		"_postman_id": "ea11abf4-3954-40c6-9856-745fae7d0bf8",
+		"name": "ShopTest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "39851355",
+		"_collection_link": "https://aminalsuhaibani-2786.postman.co/workspace/My-Workspace~a826fe88-1a27-48ba-8fef-180fcbad4fc0/collection/39851355-ea11abf4-3954-40c6-9856-745fae7d0bf8?action=share&source=collection_link&creator=39851355"
+	},
+	"item": [
+		{
+			"name": "/api/products",
+			"request": {
+				"auth": {
+					"type": "inherit",
+					"inherit": {}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/products"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/add_to_cart/{productId}",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": "http://localhost:8080/api/add_to_cart/2"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/products/search?keyword=laptop",
+			"request": {
+				"auth": {
+					"type": "inherit",
+					"inherit": {}
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/products/search?keyword=laptop",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"products",
+						"search"
+					],
+					"query": [
+						{
+							"key": "keyword",
+							"value": "laptop"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/view_cart",
+			"request": {
+				"auth": {
+					"type": "inherit",
+					"inherit": {}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/view_cart"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/checkout",
+			"request": {
+				"auth": {
+					"type": "inherit",
+					"inherit": {}
+				},
+				"method": "POST",
+				"header": [],
+				"url": "http://localhost:8080/api/checkout"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/products/99",
+			"request": {
+				"auth": {
+					"type": "inherit",
+					"inherit": {}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/products/99"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/remove_from_cart/1",
+			"request": {
+				"auth": {
+					"type": "inherit",
+					"inherit": {}
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:8080/api/remove_from_cart/1"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/empty_cart",
+			"request": {
+				"auth": {
+					"type": "inherit",
+					"inherit": {}
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:8080/api/empty_cart"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/add_products",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"New Product\",\r\n  \"price\": 3200.0,\r\n  \"description\": \"A new product description\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/add_products"
+			},
+			"response": []
+		}
+	]
+}

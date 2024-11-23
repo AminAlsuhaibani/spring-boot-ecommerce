@@ -31,7 +31,6 @@ This is a Spring Boot-based e-commerce application that allows managing products
    The database will be automatically created and initialized by the application.
    Ensure PostgreSQL is running on `localhost:5432`
 
-   - Make sure the `product` table is set with an `auto-increment` `id` and the `tax_rate` field.
    
 3. **Update application properties**:
    Open `src/main/resources/application.properties` and update the database connection settings:

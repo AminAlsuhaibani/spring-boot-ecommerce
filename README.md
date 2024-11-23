@@ -55,6 +55,17 @@ This is a Spring Boot-based e-commerce application that allows managing products
 5. **Access the Application**:
    - The application will be available at `http://localhost:8080`.
    - You can interact with the REST API endpoints using Postman or any API client.
+     
+6. **Import Postman Tests**:
+   #### 1. Download the Postman Collection: Download the Postman collection file `shop-api-testing.json` from the repository or from a shared location.
+
+   #### 2. Import into Postman:
+   - Open Postman.
+   - Click Import in the top-left corner.
+   - Select Upload Files and choose the `shop-api-testing.json` file.
+   - Click Import.
+     
+   #### 3. Download the Postman Collection: Download the Postman collection file shop-api-testing.json from the repository or from a shared location.
 
 ## REST API Details
 

@@ -22,8 +22,8 @@ This is a Spring Boot-based e-commerce application that allows managing products
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/yourusername/yourrepository.git
-   cd yourrepository
+   git clone https://github.com/amunh3333/spring-boot-ecommerce.git
+   cd spring-boot-ecommerce
    ```
 
 2. **Configure Database**:

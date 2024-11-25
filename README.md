@@ -22,7 +22,7 @@ This is a Spring Boot-based e-commerce application that allows managing products
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/amunh3333/spring-boot-ecommerce.git
+   git clone https://github.com/AminAlsuhaibani/spring-boot-ecommerce.git
    
    ```
 
